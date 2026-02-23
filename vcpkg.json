@@ -1,0 +1,11 @@
+{
+    "name": "kt-windiagtool",
+    "version-string": "1.0.0",
+    "description": "Security Product Diagnostics Collector for Windows",
+    "dependencies": [
+        "nlohmann-json",
+        "zlib",
+        "minizip",
+        "gtest"
+    ]
+}

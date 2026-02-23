@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{3A7B9C1E-4D5F-6A8B-9C0D-1E2F3A4B5C6D}</ProjectGuid>
+    <RootNamespace>KTWinDiagTool</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <VcpkgEnabled>false</VcpkgEnabled>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <!-- Debug Configuration -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <!-- Release Configuration -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <!-- Output directories -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <!-- Debug Compiler/Linker -->
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)third_party\json\single_include;$(ProjectDir)third_party\zlib;$(ProjectDir)third_party\zlib\contrib\minizip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EntryPointSymbol>wWinMainCRTStartup</EntryPointSymbol>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>advapi32.lib;wevtapi.lib;tdh.lib;dbghelp.lib;pdh.lib;ole32.lib;oleaut32.lib;wbemuuid.lib;shlwapi.lib;shell32.lib;iphlpapi.lib;ws2_32.lib;dnsapi.lib;netapi32.lib;secur32.lib;ntdsapi.lib;version.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+    </Link>
+  </ItemDefinitionGroup>
+  <!-- Release Compiler/Linker -->
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)third_party\json\single_include;$(ProjectDir)third_party\zlib;$(ProjectDir)third_party\zlib\contrib\minizip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EntryPointSymbol>wWinMainCRTStartup</EntryPointSymbol>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>advapi32.lib;wevtapi.lib;tdh.lib;dbghelp.lib;pdh.lib;ole32.lib;oleaut32.lib;wbemuuid.lib;shlwapi.lib;shell32.lib;iphlpapi.lib;ws2_32.lib;dnsapi.lib;netapi32.lib;secur32.lib;ntdsapi.lib;version.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+    </Link>
+  </ItemDefinitionGroup>
+  <!-- Source Files -->
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\app\Application.cpp" />
+    <ClCompile Include="src\app\CLIHandler.cpp" />
+    <ClCompile Include="src\app\Config.cpp" />
+    <ClCompile Include="src\util\Logger.cpp" />
+    <ClCompile Include="src\util\StringUtils.cpp" />
+    <ClCompile Include="src\util\Privileges.cpp" />
+    <ClCompile Include="src\util\WmiHelper.cpp" />
+    <ClCompile Include="src\collectors\CollectorEngine.cpp" />
+    <ClCompile Include="src\collectors\EnvVarCollector.cpp" />
+    <ClCompile Include="src\collectors\RegistryCollector.cpp" />
+    <ClCompile Include="src\collectors\InstalledProductsCollector.cpp" />
+    <ClCompile Include="src\collectors\ProductLogCollector.cpp" />
+    <ClCompile Include="src\collectors\InstallLogCollector.cpp" />
+    <ClCompile Include="src\collectors\ServicesCollector.cpp" />
+    <ClCompile Include="src\collectors\ProxySettingsCollector.cpp" />
+    <ClCompile Include="src\collectors\NetworkConfigCollector.cpp" />
+    <ClCompile Include="src\collectors\FirewallConfigCollector.cpp" />
+    <ClCompile Include="src\collectors\UserInfoCollector.cpp" />
+    <ClCompile Include="src\collectors\DiskSpaceCollector.cpp" />
+    <ClCompile Include="src\collectors\WerCollector.cpp" />
+    <ClCompile Include="src\collectors\SystemInfoCollector.cpp" />
+    <ClCompile Include="src\collectors\EventLogCollector.cpp" />
+    <ClCompile Include="src\collectors\EtwLogCollector.cpp" />
+    <ClCompile Include="src\collectors\WppLogCollector.cpp" />
+    <ClCompile Include="src\controllers\WppController.cpp" />
+    <ClCompile Include="src\collectors\PerfLogCollector.cpp" />
+    <ClCompile Include="src\collectors\PacketCaptureCollector.cpp" />
+    <ClCompile Include="src\controllers\PerfController.cpp" />
+    <ClCompile Include="src\controllers\EtwController.cpp" />
+    <ClCompile Include="src\controllers\PacketCaptureController.cpp" />
+    <ClCompile Include="src\controllers\ReproOrchestrator.cpp" />
+    <ClCompile Include="src\collectors\CrashDumpCollector.cpp" />
+    <ClCompile Include="src\analysis\DumpAnalyzer.cpp" />
+    <ClCompile Include="src\analysis\WinDbgAutomation.cpp" />
+    <ClCompile Include="src\output\ReportGenerator.cpp" />
+    <ClCompile Include="src\output\ZipPackager.cpp" />
+    <ClCompile Include="src\ui\MainWindow.cpp" />
+    <ClCompile Include="src\ui\CollectorPanel.cpp" />
+    <ClCompile Include="src\ui\ControlPanel.cpp" />
+    <ClCompile Include="src\ui\TraceLevelPanel.cpp" />
+    <ClCompile Include="src\ui\ProgressDialog.cpp" />
+    <ClCompile Include="src\ui\ReproModeDialog.cpp" />
+  </ItemGroup>
+  <!-- zlib sources -->
+  <ItemGroup>
+    <ClCompile Include="third_party\zlib\adler32.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="third_party\zlib\compress.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="third_party\zlib\crc32.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="third_party\zlib\deflate.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="third_party\zlib\gzclose.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="third_party\zlib\gzlib.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="third_party\zlib\gzread.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="third_party\zlib\gzwrite.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="third_party\zlib\inflate.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="third_party\zlib\infback.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="third_party\zlib\inftrees.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="third_party\zlib\inffast.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="third_party\zlib\trees.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="third_party\zlib\uncompr.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="third_party\zlib\zutil.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+  </ItemGroup>
+  <!-- minizip sources -->
+  <ItemGroup>
+    <ClCompile Include="third_party\zlib\contrib\minizip\zip.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="third_party\zlib\contrib\minizip\ioapi.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="third_party\zlib\contrib\minizip\iowin32.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+  </ItemGroup>
+  <!-- Header Files -->
+  <ItemGroup>
+    <ClInclude Include="src\app\Application.h" />
+    <ClInclude Include="src\app\CLIHandler.h" />
+    <ClInclude Include="src\app\Config.h" />
+    <ClInclude Include="src\util\Logger.h" />
+    <ClInclude Include="src\util\StringUtils.h" />
+    <ClInclude Include="src\util\Privileges.h" />
+    <ClInclude Include="src\util\WmiHelper.h" />
+    <ClInclude Include="src\collectors\ICollector.h" />
+    <ClInclude Include="src\collectors\CollectorEngine.h" />
+    <ClInclude Include="src\collectors\EnvVarCollector.h" />
+    <ClInclude Include="src\collectors\RegistryCollector.h" />
+    <ClInclude Include="src\collectors\InstalledProductsCollector.h" />
+    <ClInclude Include="src\collectors\ProductLogCollector.h" />
+    <ClInclude Include="src\collectors\InstallLogCollector.h" />
+    <ClInclude Include="src\collectors\ServicesCollector.h" />
+    <ClInclude Include="src\collectors\ProxySettingsCollector.h" />
+    <ClInclude Include="src\collectors\NetworkConfigCollector.h" />
+    <ClInclude Include="src\collectors\FirewallConfigCollector.h" />
+    <ClInclude Include="src\collectors\UserInfoCollector.h" />
+    <ClInclude Include="src\collectors\DiskSpaceCollector.h" />
+    <ClInclude Include="src\collectors\WerCollector.h" />
+    <ClInclude Include="src\collectors\SystemInfoCollector.h" />
+    <ClInclude Include="src\collectors\EventLogCollector.h" />
+    <ClInclude Include="src\collectors\EtwLogCollector.h" />
+    <ClInclude Include="src\collectors\WppLogCollector.h" />
+    <ClInclude Include="src\controllers\WppController.h" />
+    <ClInclude Include="src\collectors\PerfLogCollector.h" />
+    <ClInclude Include="src\collectors\PacketCaptureCollector.h" />
+    <ClInclude Include="src\controllers\PerfController.h" />
+    <ClInclude Include="src\controllers\EtwController.h" />
+    <ClInclude Include="src\controllers\PacketCaptureController.h" />
+    <ClInclude Include="src\controllers\ReproOrchestrator.h" />
+    <ClInclude Include="src\collectors\CrashDumpCollector.h" />
+    <ClInclude Include="src\analysis\DumpAnalyzer.h" />
+    <ClInclude Include="src\analysis\WinDbgAutomation.h" />
+    <ClInclude Include="src\output\ReportGenerator.h" />
+    <ClInclude Include="src\output\ZipPackager.h" />
+    <ClInclude Include="src\ui\resource.h" />
+    <ClInclude Include="src\ui\MainWindow.h" />
+    <ClInclude Include="src\ui\CollectorPanel.h" />
+    <ClInclude Include="src\ui\ControlPanel.h" />
+    <ClInclude Include="src\ui\TraceLevelPanel.h" />
+    <ClInclude Include="src\ui\ProgressDialog.h" />
+    <ClInclude Include="src\ui\ReproModeDialog.h" />
+  </ItemGroup>
+  <!-- Resource Files -->
+  <ItemGroup>
+    <ResourceCompile Include="src\ui\Resources.rc" />
+  </ItemGroup>
+  <!-- Config Files (for visibility in Solution Explorer) -->
+  <ItemGroup>
+    <None Include="config\sample_product.json" />
+    <None Include="config\product_template.json" />
+    <None Include="vcpkg.json" />
+  </ItemGroup>
+  <!-- Copy config to output -->
+  <Target Name="CopyConfig" AfterTargets="Build">
+    <Copy SourceFiles="@(None)" DestinationFolder="$(OutDir)config\" Condition="'%(Extension)' == '.json' and $([System.String]::new('%(Identity)').StartsWith('config\'))" SkipUnchangedFiles="true" />
+  </Target>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

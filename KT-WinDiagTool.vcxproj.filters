@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\app">
+      <UniqueIdentifier>{A1000001-0001-0001-0001-000000000001}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\util">
+      <UniqueIdentifier>{A1000001-0001-0001-0001-000000000002}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\collectors">
+      <UniqueIdentifier>{A1000001-0001-0001-0001-000000000003}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\analysis">
+      <UniqueIdentifier>{A1000001-0001-0001-0001-000000000004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\controllers">
+      <UniqueIdentifier>{A1000001-0001-0001-0001-000000000005}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\output">
+      <UniqueIdentifier>{A1000001-0001-0001-0001-000000000006}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ui">
+      <UniqueIdentifier>{A1000001-0001-0001-0001-000000000007}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\app">
+      <UniqueIdentifier>{B1000001-0001-0001-0001-000000000001}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\util">
+      <UniqueIdentifier>{B1000001-0001-0001-0001-000000000002}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\collectors">
+      <UniqueIdentifier>{B1000001-0001-0001-0001-000000000003}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\analysis">
+      <UniqueIdentifier>{B1000001-0001-0001-0001-000000000004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\controllers">
+      <UniqueIdentifier>{B1000001-0001-0001-0001-000000000005}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\output">
+      <UniqueIdentifier>{B1000001-0001-0001-0001-000000000006}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ui">
+      <UniqueIdentifier>{B1000001-0001-0001-0001-000000000007}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{E1000001-0001-0001-0001-000000000001}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Config">
+      <UniqueIdentifier>{C1000001-0001-0001-0001-000000000001}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party">
+      <UniqueIdentifier>{D1000001-0001-0001-0001-000000000001}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\zlib">
+      <UniqueIdentifier>{D1000001-0001-0001-0001-000000000002}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\minizip">
+      <UniqueIdentifier>{D1000001-0001-0001-0001-000000000003}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+
+  <!-- Source Files -->
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\app\Application.cpp">
+      <Filter>Source Files\app</Filter>
+    </ClCompile>
+    <ClCompile Include="src\app\CLIHandler.cpp">
+      <Filter>Source Files\app</Filter>
+    </ClCompile>
+    <ClCompile Include="src\app\Config.cpp">
+      <Filter>Source Files\app</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\Logger.cpp">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\StringUtils.cpp">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\Privileges.cpp">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\WmiHelper.cpp">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collectors\CollectorEngine.cpp">
+      <Filter>Source Files\collectors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collectors\EnvVarCollector.cpp">
+      <Filter>Source Files\collectors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collectors\RegistryCollector.cpp">
+      <Filter>Source Files\collectors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collectors\InstalledProductsCollector.cpp">
+      <Filter>Source Files\collectors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collectors\ProductLogCollector.cpp">
+      <Filter>Source Files\collectors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collectors\InstallLogCollector.cpp">
+      <Filter>Source Files\collectors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collectors\ServicesCollector.cpp">
+      <Filter>Source Files\collectors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collectors\ProxySettingsCollector.cpp">
+      <Filter>Source Files\collectors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collectors\NetworkConfigCollector.cpp">
+      <Filter>Source Files\collectors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collectors\FirewallConfigCollector.cpp">
+      <Filter>Source Files\collectors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collectors\UserInfoCollector.cpp">
+      <Filter>Source Files\collectors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collectors\DiskSpaceCollector.cpp">
+      <Filter>Source Files\collectors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collectors\WerCollector.cpp">
+      <Filter>Source Files\collectors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collectors\SystemInfoCollector.cpp">
+      <Filter>Source Files\collectors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collectors\EventLogCollector.cpp">
+      <Filter>Source Files\collectors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collectors\EtwLogCollector.cpp">
+      <Filter>Source Files\collectors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collectors\WppLogCollector.cpp">
+      <Filter>Source Files\collectors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\controllers\WppController.cpp">
+      <Filter>Source Files\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collectors\PerfLogCollector.cpp">
+      <Filter>Source Files\collectors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collectors\PacketCaptureCollector.cpp">
+      <Filter>Source Files\collectors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\controllers\PerfController.cpp">
+      <Filter>Source Files\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\controllers\EtwController.cpp">
+      <Filter>Source Files\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\controllers\PacketCaptureController.cpp">
+      <Filter>Source Files\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\controllers\ReproOrchestrator.cpp">
+      <Filter>Source Files\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collectors\CrashDumpCollector.cpp">
+      <Filter>Source Files\collectors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\analysis\DumpAnalyzer.cpp">
+      <Filter>Source Files\analysis</Filter>
+    </ClCompile>
+    <ClCompile Include="src\analysis\WinDbgAutomation.cpp">
+      <Filter>Source Files\analysis</Filter>
+    </ClCompile>
+    <ClCompile Include="src\output\ReportGenerator.cpp">
+      <Filter>Source Files\output</Filter>
+    </ClCompile>
+    <ClCompile Include="src\output\ZipPackager.cpp">
+      <Filter>Source Files\output</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\MainWindow.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\CollectorPanel.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\ControlPanel.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\TraceLevelPanel.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\ProgressDialog.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\ReproModeDialog.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+  </ItemGroup>
+
+  <!-- Header Files -->
+  <ItemGroup>
+    <ClInclude Include="src\app\Application.h">
+      <Filter>Header Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="src\app\CLIHandler.h">
+      <Filter>Header Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="src\app\Config.h">
+      <Filter>Header Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\Logger.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\StringUtils.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\Privileges.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\WmiHelper.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collectors\ICollector.h">
+      <Filter>Header Files\collectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collectors\CollectorEngine.h">
+      <Filter>Header Files\collectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collectors\EnvVarCollector.h">
+      <Filter>Header Files\collectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collectors\RegistryCollector.h">
+      <Filter>Header Files\collectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collectors\InstalledProductsCollector.h">
+      <Filter>Header Files\collectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collectors\ProductLogCollector.h">
+      <Filter>Header Files\collectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collectors\InstallLogCollector.h">
+      <Filter>Header Files\collectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collectors\ServicesCollector.h">
+      <Filter>Header Files\collectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collectors\ProxySettingsCollector.h">
+      <Filter>Header Files\collectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collectors\NetworkConfigCollector.h">
+      <Filter>Header Files\collectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collectors\FirewallConfigCollector.h">
+      <Filter>Header Files\collectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collectors\UserInfoCollector.h">
+      <Filter>Header Files\collectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collectors\DiskSpaceCollector.h">
+      <Filter>Header Files\collectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collectors\WerCollector.h">
+      <Filter>Header Files\collectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collectors\SystemInfoCollector.h">
+      <Filter>Header Files\collectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collectors\EventLogCollector.h">
+      <Filter>Header Files\collectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collectors\EtwLogCollector.h">
+      <Filter>Header Files\collectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collectors\WppLogCollector.h">
+      <Filter>Header Files\collectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\controllers\WppController.h">
+      <Filter>Header Files\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collectors\PerfLogCollector.h">
+      <Filter>Header Files\collectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collectors\PacketCaptureCollector.h">
+      <Filter>Header Files\collectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\controllers\PerfController.h">
+      <Filter>Header Files\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\controllers\EtwController.h">
+      <Filter>Header Files\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\controllers\PacketCaptureController.h">
+      <Filter>Header Files\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\controllers\ReproOrchestrator.h">
+      <Filter>Header Files\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collectors\CrashDumpCollector.h">
+      <Filter>Header Files\collectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\analysis\DumpAnalyzer.h">
+      <Filter>Header Files\analysis</Filter>
+    </ClInclude>
+    <ClInclude Include="src\analysis\WinDbgAutomation.h">
+      <Filter>Header Files\analysis</Filter>
+    </ClInclude>
+    <ClInclude Include="src\output\ReportGenerator.h">
+      <Filter>Header Files\output</Filter>
+    </ClInclude>
+    <ClInclude Include="src\output\ZipPackager.h">
+      <Filter>Header Files\output</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\resource.h">
+      <Filter>Header Files\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\MainWindow.h">
+      <Filter>Header Files\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\CollectorPanel.h">
+      <Filter>Header Files\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\ControlPanel.h">
+      <Filter>Header Files\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\TraceLevelPanel.h">
+      <Filter>Header Files\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\ProgressDialog.h">
+      <Filter>Header Files\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\ReproModeDialog.h">
+      <Filter>Header Files\ui</Filter>
+    </ClInclude>
+  </ItemGroup>
+
+  <!-- Resource Files -->
+  <ItemGroup>
+    <ResourceCompile Include="src\ui\Resources.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+
+  <!-- zlib/minizip Sources -->
+  <ItemGroup>
+    <ClCompile Include="third_party\zlib\adler32.c"><Filter>third_party\zlib</Filter></ClCompile>
+    <ClCompile Include="third_party\zlib\compress.c"><Filter>third_party\zlib</Filter></ClCompile>
+    <ClCompile Include="third_party\zlib\crc32.c"><Filter>third_party\zlib</Filter></ClCompile>
+    <ClCompile Include="third_party\zlib\deflate.c"><Filter>third_party\zlib</Filter></ClCompile>
+    <ClCompile Include="third_party\zlib\gzclose.c"><Filter>third_party\zlib</Filter></ClCompile>
+    <ClCompile Include="third_party\zlib\gzlib.c"><Filter>third_party\zlib</Filter></ClCompile>
+    <ClCompile Include="third_party\zlib\gzread.c"><Filter>third_party\zlib</Filter></ClCompile>
+    <ClCompile Include="third_party\zlib\gzwrite.c"><Filter>third_party\zlib</Filter></ClCompile>
+    <ClCompile Include="third_party\zlib\inflate.c"><Filter>third_party\zlib</Filter></ClCompile>
+    <ClCompile Include="third_party\zlib\infback.c"><Filter>third_party\zlib</Filter></ClCompile>
+    <ClCompile Include="third_party\zlib\inftrees.c"><Filter>third_party\zlib</Filter></ClCompile>
+    <ClCompile Include="third_party\zlib\inffast.c"><Filter>third_party\zlib</Filter></ClCompile>
+    <ClCompile Include="third_party\zlib\trees.c"><Filter>third_party\zlib</Filter></ClCompile>
+    <ClCompile Include="third_party\zlib\uncompr.c"><Filter>third_party\zlib</Filter></ClCompile>
+    <ClCompile Include="third_party\zlib\zutil.c"><Filter>third_party\zlib</Filter></ClCompile>
+    <ClCompile Include="third_party\zlib\contrib\minizip\zip.c"><Filter>third_party\minizip</Filter></ClCompile>
+    <ClCompile Include="third_party\zlib\contrib\minizip\ioapi.c"><Filter>third_party\minizip</Filter></ClCompile>
+    <ClCompile Include="third_party\zlib\contrib\minizip\iowin32.c"><Filter>third_party\minizip</Filter></ClCompile>
+  </ItemGroup>
+
+  <!-- Config Files -->
+  <ItemGroup>
+    <None Include="config\sample_product.json">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="config\product_template.json">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="vcpkg.json">
+      <Filter>Config</Filter>
+    </None>
+  </ItemGroup>
+
+</Project>
