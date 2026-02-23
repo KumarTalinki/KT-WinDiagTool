@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{7E8F9A0B-1C2D-3E4F-5A6B-7C8D9E0F1A2B}</ProjectGuid>
+    <RootNamespace>KTWinDiagToolTests</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <VcpkgEnabled>false</VcpkgEnabled>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <!-- Debug Configuration -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <!-- Release Configuration -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <!-- Output directories -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\Tests\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\Tests\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <!-- Debug Compiler/Linker -->
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)src;$(SolutionDir)third_party\json\single_include;$(SolutionDir)third_party\zlib;$(SolutionDir)third_party\zlib\contrib\minizip;$(SolutionDir)third_party\googletest\googletest\include;$(SolutionDir)third_party\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>advapi32.lib;wevtapi.lib;tdh.lib;dbghelp.lib;pdh.lib;ole32.lib;oleaut32.lib;wbemuuid.lib;shlwapi.lib;shell32.lib;iphlpapi.lib;ws2_32.lib;dnsapi.lib;netapi32.lib;secur32.lib;ntdsapi.lib;version.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <!-- Release Compiler/Linker -->
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)src;$(SolutionDir)third_party\json\single_include;$(SolutionDir)third_party\zlib;$(SolutionDir)third_party\zlib\contrib\minizip;$(SolutionDir)third_party\googletest\googletest\include;$(SolutionDir)third_party\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>advapi32.lib;wevtapi.lib;tdh.lib;dbghelp.lib;pdh.lib;ole32.lib;oleaut32.lib;wbemuuid.lib;shlwapi.lib;shell32.lib;iphlpapi.lib;ws2_32.lib;dnsapi.lib;netapi32.lib;secur32.lib;ntdsapi.lib;version.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <!-- Test Source Files -->
+  <ItemGroup>
+    <ClCompile Include="test_main.cpp" />
+    <ClCompile Include="test_config.cpp" />
+    <ClCompile Include="test_collectors_phase3.cpp" />
+    <ClCompile Include="test_collector_engine.cpp" />
+    <ClCompile Include="test_cli_handler.cpp" />
+    <ClCompile Include="test_env_var_collector.cpp" />
+    <ClCompile Include="test_registry_collector.cpp" />
+    <ClCompile Include="test_installed_products.cpp" />
+    <ClCompile Include="test_services_collector.cpp" />
+    <ClCompile Include="test_user_info_collector.cpp" />
+    <ClCompile Include="test_disk_space_collector.cpp" />
+    <ClCompile Include="test_proxy_collector.cpp" />
+    <ClCompile Include="test_network_config.cpp" />
+    <ClCompile Include="test_firewall_collector.cpp" />
+    <ClCompile Include="test_wer_collector.cpp" />
+    <ClCompile Include="test_system_info_collector.cpp" />
+    <ClCompile Include="test_product_log_collector.cpp" />
+    <ClCompile Include="test_install_log_collector.cpp" />
+    <ClCompile Include="test_eventlog_collector.cpp" />
+    <ClCompile Include="test_wpp_controller.cpp" />
+    <ClCompile Include="test_perf_controller.cpp" />
+    <ClCompile Include="test_packet_capture.cpp" />
+    <ClCompile Include="test_crash_dump_collector.cpp" />
+    <ClCompile Include="test_dump_analyzer.cpp" />
+    <ClCompile Include="test_windbg_automation.cpp" />
+    <ClCompile Include="test_repro_orchestrator.cpp" />
+    <ClCompile Include="test_zip_packager.cpp" />
+    <ClCompile Include="test_report_generator.cpp" />
+    <ClCompile Include="integration\test_full_collection.cpp" />
+  </ItemGroup>
+  <!-- Mock headers -->
+  <ItemGroup>
+    <ClInclude Include="mock\MockCollector.h" />
+  </ItemGroup>
+  <!-- GoogleTest source (compiled directly) -->
+  <ItemGroup>
+    <ClCompile Include="$(SolutionDir)third_party\googletest\googletest\src\gtest-all.cc">
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+    </ClCompile>
+  </ItemGroup>
+  <!-- Shared application source files (compiled into tests) -->
+  <ItemGroup>
+    <ClCompile Include="$(SolutionDir)src\app\Config.cpp" />
+    <ClCompile Include="$(SolutionDir)src\app\CLIHandler.cpp" />
+    <ClCompile Include="$(SolutionDir)src\util\Logger.cpp" />
+    <ClCompile Include="$(SolutionDir)src\util\StringUtils.cpp" />
+    <ClCompile Include="$(SolutionDir)src\util\Privileges.cpp" />
+    <ClCompile Include="$(SolutionDir)src\util\WmiHelper.cpp" />
+    <ClCompile Include="$(SolutionDir)src\collectors\CollectorEngine.cpp" />
+    <ClCompile Include="$(SolutionDir)src\collectors\EnvVarCollector.cpp" />
+    <ClCompile Include="$(SolutionDir)src\collectors\RegistryCollector.cpp" />
+    <ClCompile Include="$(SolutionDir)src\collectors\InstalledProductsCollector.cpp" />
+    <ClCompile Include="$(SolutionDir)src\collectors\ProductLogCollector.cpp" />
+    <ClCompile Include="$(SolutionDir)src\collectors\InstallLogCollector.cpp" />
+    <ClCompile Include="$(SolutionDir)src\collectors\ServicesCollector.cpp" />
+    <ClCompile Include="$(SolutionDir)src\collectors\ProxySettingsCollector.cpp" />
+    <ClCompile Include="$(SolutionDir)src\collectors\NetworkConfigCollector.cpp" />
+    <ClCompile Include="$(SolutionDir)src\collectors\FirewallConfigCollector.cpp" />
+    <ClCompile Include="$(SolutionDir)src\collectors\UserInfoCollector.cpp" />
+    <ClCompile Include="$(SolutionDir)src\collectors\DiskSpaceCollector.cpp" />
+    <ClCompile Include="$(SolutionDir)src\collectors\WerCollector.cpp" />
+    <ClCompile Include="$(SolutionDir)src\collectors\SystemInfoCollector.cpp" />
+    <ClCompile Include="$(SolutionDir)src\collectors\EventLogCollector.cpp" />
+    <ClCompile Include="$(SolutionDir)src\collectors\EtwLogCollector.cpp" />
+    <ClCompile Include="$(SolutionDir)src\collectors\WppLogCollector.cpp" />
+    <ClCompile Include="$(SolutionDir)src\controllers\WppController.cpp" />
+    <ClCompile Include="$(SolutionDir)src\collectors\PerfLogCollector.cpp" />
+    <ClCompile Include="$(SolutionDir)src\collectors\PacketCaptureCollector.cpp" />
+    <ClCompile Include="$(SolutionDir)src\controllers\PerfController.cpp" />
+    <ClCompile Include="$(SolutionDir)src\controllers\EtwController.cpp" />
+    <ClCompile Include="$(SolutionDir)src\controllers\PacketCaptureController.cpp" />
+    <ClCompile Include="$(SolutionDir)src\controllers\ReproOrchestrator.cpp" />
+    <ClCompile Include="$(SolutionDir)src\collectors\CrashDumpCollector.cpp" />
+    <ClCompile Include="$(SolutionDir)src\analysis\DumpAnalyzer.cpp" />
+    <ClCompile Include="$(SolutionDir)src\analysis\WinDbgAutomation.cpp" />
+    <ClCompile Include="$(SolutionDir)src\output\ReportGenerator.cpp" />
+    <ClCompile Include="$(SolutionDir)src\output\ZipPackager.cpp" />
+    <ClCompile Include="$(SolutionDir)src\ui\MainWindow.cpp" />
+    <ClCompile Include="$(SolutionDir)src\ui\CollectorPanel.cpp" />
+    <ClCompile Include="$(SolutionDir)src\ui\ControlPanel.cpp" />
+    <ClCompile Include="$(SolutionDir)src\ui\TraceLevelPanel.cpp" />
+    <ClCompile Include="$(SolutionDir)src\ui\ProgressDialog.cpp" />
+    <ClCompile Include="$(SolutionDir)src\ui\ReproModeDialog.cpp" />
+  </ItemGroup>
+  <!-- zlib sources (needed by ZipPackager) -->
+  <ItemGroup>
+    <ClCompile Include="$(SolutionDir)third_party\zlib\adler32.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="$(SolutionDir)third_party\zlib\compress.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="$(SolutionDir)third_party\zlib\crc32.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="$(SolutionDir)third_party\zlib\deflate.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="$(SolutionDir)third_party\zlib\gzclose.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="$(SolutionDir)third_party\zlib\gzlib.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="$(SolutionDir)third_party\zlib\gzread.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="$(SolutionDir)third_party\zlib\gzwrite.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="$(SolutionDir)third_party\zlib\inflate.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="$(SolutionDir)third_party\zlib\infback.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="$(SolutionDir)third_party\zlib\inftrees.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="$(SolutionDir)third_party\zlib\inffast.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="$(SolutionDir)third_party\zlib\trees.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="$(SolutionDir)third_party\zlib\uncompr.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="$(SolutionDir)third_party\zlib\zutil.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+  </ItemGroup>
+  <!-- minizip sources (needed by ZipPackager) -->
+  <ItemGroup>
+    <ClCompile Include="$(SolutionDir)third_party\zlib\contrib\minizip\zip.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="$(SolutionDir)third_party\zlib\contrib\minizip\ioapi.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="$(SolutionDir)third_party\zlib\contrib\minizip\iowin32.c"><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+  </ItemGroup>
+  <!-- Copy config to test output -->
+  <Target Name="CopyTestConfig" AfterTargets="Build">
+    <ItemGroup>
+      <ConfigFiles Include="$(SolutionDir)config\*.json" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ConfigFiles)" DestinationFolder="$(OutDir)config\" SkipUnchangedFiles="true" />
+  </Target>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

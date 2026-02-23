@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <ItemGroup>
+    <Filter Include="Test Sources">
+      <UniqueIdentifier>{D1000001-0001-0001-0001-000000000001}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App Sources">
+      <UniqueIdentifier>{D1000001-0001-0001-0001-000000000002}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mock">
+      <UniqueIdentifier>{D1000001-0001-0001-0001-000000000003}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ClCompile Include="test_main.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_config.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_collectors_phase3.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_collector_engine.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_cli_handler.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_env_var_collector.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_registry_collector.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_installed_products.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_services_collector.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_user_info_collector.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_disk_space_collector.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_proxy_collector.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_network_config.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_firewall_collector.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_wer_collector.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_system_info_collector.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_product_log_collector.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_install_log_collector.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_eventlog_collector.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_wpp_controller.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_perf_controller.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_packet_capture.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_crash_dump_collector.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_dump_analyzer.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_windbg_automation.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_repro_orchestrator.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_zip_packager.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test_report_generator.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="integration\test_full_collection.cpp">
+      <Filter>Test Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\app\Config.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\app\CLIHandler.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\util\Logger.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\util\StringUtils.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\util\Privileges.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\util\WmiHelper.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\collectors\CollectorEngine.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\collectors\EnvVarCollector.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\collectors\RegistryCollector.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\collectors\InstalledProductsCollector.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\collectors\ProductLogCollector.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\collectors\InstallLogCollector.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\collectors\ServicesCollector.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\collectors\ProxySettingsCollector.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\collectors\NetworkConfigCollector.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\collectors\FirewallConfigCollector.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\collectors\UserInfoCollector.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\collectors\DiskSpaceCollector.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\collectors\WerCollector.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\collectors\SystemInfoCollector.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\collectors\EventLogCollector.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\collectors\EtwLogCollector.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\collectors\WppLogCollector.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\controllers\WppController.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\collectors\PerfLogCollector.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\collectors\PacketCaptureCollector.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\controllers\PerfController.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\controllers\EtwController.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\controllers\PacketCaptureController.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\controllers\ReproOrchestrator.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\collectors\CrashDumpCollector.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\analysis\DumpAnalyzer.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\analysis\WinDbgAutomation.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\output\ReportGenerator.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\output\ZipPackager.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\ui\MainWindow.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\ui\CollectorPanel.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\ui\ControlPanel.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\ui\TraceLevelPanel.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\ui\ProgressDialog.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)src\ui\ReproModeDialog.cpp">
+      <Filter>App Sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ClInclude Include="mock\MockCollector.h">
+      <Filter>Mock</Filter>
+    </ClInclude>
+  </ItemGroup>
+
+</Project>
