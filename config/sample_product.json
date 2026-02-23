@@ -1,0 +1,67 @@
+{
+    "product_name": "ExampleAV",
+    "product_version_registry": "HKLM\\SOFTWARE\\ExampleAV",
+    "service_names": ["ExAVSvc", "ExAVDriver"],
+    "log_paths": [
+        "%ProgramData%\\ExampleAV\\Logs"
+    ],
+    "install_log_paths": [
+        "%TEMP%\\ExampleAV_Install.log",
+        "%TEMP%\\ExampleAV_Setup.log"
+    ],
+    "wpp_providers": [
+        {
+            "guid": "{12345678-1234-1234-1234-123456789ABC}",
+            "name": "ExAV.Core",
+            "level": 5,
+            "flags": "0xFFFF"
+        },
+        {
+            "guid": "{12345678-1234-1234-1234-123456789DEF}",
+            "name": "ExAV.Network",
+            "level": 5,
+            "flags": "0xFFFF"
+        }
+    ],
+    "etw_providers": [
+        {
+            "guid": "{AABBCCDD-1122-3344-5566-778899AABBCC}",
+            "name": "ExampleAV-ETW-Provider"
+        }
+    ],
+    "registry_keys": [
+        "HKLM\\SOFTWARE\\ExampleAV",
+        "HKLM\\SYSTEM\\CurrentControlSet\\Services\\ExAVSvc",
+        "HKLM\\SYSTEM\\CurrentControlSet\\Services\\ExAVDriver"
+    ],
+    "event_log_channels": [
+        "Application",
+        "System",
+        "Microsoft-Windows-ExampleAV/Operational"
+    ],
+    "crash_dump_paths": [
+        "%ProgramData%\\ExampleAV\\CrashDumps",
+        "%LocalAppData%\\CrashDumps"
+    ],
+    "crash_dump_config_registry": "HKLM\\SOFTWARE\\ExampleAV\\Diagnostics\\DumpPath",
+    "perf_counters": [
+        "\\Process(ExAVSvc)\\*",
+        "\\Memory\\*",
+        "\\Processor(*)\\% Processor Time",
+        "\\PhysicalDisk(*)\\*"
+    ],
+    "packet_capture": {
+        "interface": "auto",
+        "filter": "tcp port 443 or tcp port 80",
+        "duration_seconds": 60
+    },
+    "wpp_trace_levels": {
+        "available": ["Critical", "Error", "Warning", "Info", "Verbose"],
+        "default": "Warning"
+    },
+    "product_log_levels": {
+        "level_registry_key": "HKLM\\SOFTWARE\\ExampleAV\\Logging\\Level",
+        "available": ["Off", "Error", "Warning", "Info", "Debug", "Trace"],
+        "default": "Info"
+    }
+}

@@ -1,0 +1,157 @@
+#include "resource.h"
+#include <windows.h>
+
+// ============================================================================
+// Application Icon
+// ============================================================================
+IDI_APP_ICON ICON "app.ico"
+
+// ============================================================================
+// Menu
+// ============================================================================
+IDM_MAINMENU MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open Config...\tCtrl+O",    IDM_FILE_OPEN_CONFIG
+        MENUITEM "Set &Output Directory...",    IDM_FILE_SET_OUTPUT
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit\tAlt+F4",              IDM_FILE_EXIT
+    END
+    POPUP "&Collect"
+    BEGIN
+        MENUITEM "&Run Collection\tF5",        IDM_COLLECT_RUN
+        MENUITEM "&Cancel",                    IDM_COLLECT_CANCEL, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Select &All",                IDM_COLLECT_SELECT_ALL
+        MENUITEM "&Deselect All",              IDM_COLLECT_DESELECT
+    END
+    POPUP "&Tools"
+    BEGIN
+        MENUITEM "&Repro Mode...\tF6",         IDM_TOOLS_REPRO
+        MENUITEM "Analyze &Dumps...",          IDM_TOOLS_ANALYZE
+        MENUITEM SEPARATOR
+        MENUITEM "Start &WPP Tracing",         IDM_TOOLS_WPP_START
+        MENUITEM "Sto&p WPP Tracing",          IDM_TOOLS_WPP_STOP, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Start P&erf Logging",        IDM_TOOLS_PERF_START
+        MENUITEM "Stop Per&f Logging",         IDM_TOOLS_PERF_STOP, GRAYED
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About KT-WinDiagTool...",   IDM_HELP_ABOUT
+    END
+END
+
+// ============================================================================
+// Accelerator Table
+// ============================================================================
+IDR_ACCEL ACCELERATORS
+BEGIN
+    "O",        IDM_FILE_OPEN_CONFIG,   VIRTKEY, CONTROL
+    VK_F5,      IDM_COLLECT_RUN,        VIRTKEY
+    VK_F6,      IDM_TOOLS_REPRO,        VIRTKEY
+    VK_ESCAPE,  IDM_COLLECT_CANCEL,     VIRTKEY
+END
+
+// ============================================================================
+// Progress Dialog
+// ============================================================================
+IDD_PROGRESS DIALOGEX 0, 0, 420, 320
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Collecting Diagnostics..."
+FONT 9, "Segoe UI"
+BEGIN
+    LTEXT           "Initializing...", IDC_PROG_STATUS_TEXT, 10, 10, 400, 14
+    CONTROL         "", IDC_PROG_OVERALL, "msctls_progress32", WS_CHILD | WS_VISIBLE | 0x01,
+                    10, 28, 400, 16
+    CONTROL         "", IDC_PROG_LISTVIEW, "SysListView32",
+                    WS_CHILD | WS_VISIBLE | WS_BORDER | 0x0001 | 0x8000 | 0x0004,
+                    10, 52, 400, 230
+    PUSHBUTTON      "Cancel", IDC_PROG_CANCEL, 175, 290, 70, 22
+END
+
+// ============================================================================
+// Repro Mode Dialog
+// ============================================================================
+IDD_REPRO DIALOGEX 0, 0, 420, 340
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Repro Mode"
+FONT 9, "Segoe UI"
+BEGIN
+    LTEXT           "Step 1 of 3: Configure traces", IDC_REPRO_STEP_LABEL, 10, 10, 400, 14
+
+    // Step 1: Configure controls
+    LTEXT           "WPP Trace Level:", IDC_REPRO_WPP_LABEL, 20, 34, 80, 12
+    COMBOBOX        IDC_REPRO_WPP_LEVEL, 110, 32, 120, 120, CBS_DROPDOWNLIST | WS_TABSTOP
+
+    // Step 2: Recording status
+    LTEXT           "", IDC_REPRO_ELAPSED, 20, 60, 380, 14
+
+    // Step 2: Status list (what was started)
+    CONTROL         "", IDC_REPRO_STATUS_LIST, "SysListView32",
+                    WS_CHILD | WS_BORDER | 0x0001 | 0x8000,
+                    20, 78, 380, 80
+
+    // Step 3: Collection progress
+    CONTROL         "", IDC_REPRO_PROGRESS, "msctls_progress32", WS_CHILD | 0x01,
+                    20, 168, 380, 16
+    CONTROL         "", IDC_REPRO_LISTVIEW, "SysListView32",
+                    WS_CHILD | WS_BORDER | 0x0001 | 0x8000,
+                    20, 190, 380, 100
+
+    // Action buttons
+    PUSHBUTTON      "Start Recording",  IDC_REPRO_START,  90, 310, 100, 22
+    PUSHBUTTON      "Stop && Collect",   IDC_REPRO_STOP,   200, 310, 100, 22, WS_DISABLED
+    PUSHBUTTON      "Close",            IDC_REPRO_CLOSE,   310, 310, 70, 22
+END
+
+// ============================================================================
+// About Dialog
+// ============================================================================
+IDD_ABOUT DIALOGEX 0, 0, 260, 100
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About KT-WinDiagTool"
+FONT 9, "Segoe UI"
+BEGIN
+    LTEXT           "KT-WinDiagTool v1.0.0", -1, 20, 14, 220, 14
+    LTEXT           "Windows Security Product Diagnostics Tool", -1, 20, 30, 220, 14
+    LTEXT           "Collects system state, logs, registry, traces,", -1, 20, 46, 220, 12
+    LTEXT           "and crash dumps for support/troubleshooting.", -1, 20, 58, 220, 12
+    DEFPUSHBUTTON   "OK", IDOK, 105, 78, 50, 16
+END
+
+// ============================================================================
+// Version Info
+// ============================================================================
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     1,0,0,0
+PRODUCTVERSION  1,0,0,0
+FILEFLAGSMASK   VS_FFI_FILEFLAGSMASK
+#ifdef _DEBUG
+FILEFLAGS       VS_FF_DEBUG
+#else
+FILEFLAGS       0
+#endif
+FILEOS          VOS_NT_WINDOWS32
+FILETYPE        VFT_APP
+FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName",      "KT Diagnostics"
+            VALUE "FileDescription",  "KT-WinDiagTool - Security Product Diagnostics"
+            VALUE "FileVersion",      "1.0.0.0"
+            VALUE "InternalName",     "KT-WinDiagTool"
+            VALUE "OriginalFilename", "KT-WinDiagTool.exe"
+            VALUE "ProductName",      "KT-WinDiagTool"
+            VALUE "ProductVersion",   "1.0.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 1200
+    END
+END

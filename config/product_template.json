@@ -1,0 +1,36 @@
+{
+    "product_name": "CHANGE_ME",
+    "product_version_registry": "HKLM\\SOFTWARE\\YourProduct",
+    "service_names": [],
+    "log_paths": [],
+    "install_log_paths": [],
+    "wpp_providers": [],
+    "etw_providers": [],
+    "registry_keys": [],
+    "event_log_channels": [
+        "Application",
+        "System"
+    ],
+    "crash_dump_paths": [
+        "%LocalAppData%\\CrashDumps"
+    ],
+    "crash_dump_config_registry": "",
+    "perf_counters": [
+        "\\Memory\\*",
+        "\\Processor(*)\\% Processor Time"
+    ],
+    "packet_capture": {
+        "interface": "auto",
+        "filter": "",
+        "duration_seconds": 60
+    },
+    "wpp_trace_levels": {
+        "available": ["Critical", "Error", "Warning", "Info", "Verbose"],
+        "default": "Warning"
+    },
+    "product_log_levels": {
+        "level_registry_key": "",
+        "available": [],
+        "default": ""
+    }
+}
